@@ -1,0 +1,16 @@
+# Commands for running the corrected pilot
+
+# 1. Install dependencies
+pip install -r requirements.txt
+
+# 2. Run answer-only condition
+python run_activation_pilot_v2.py --model_name Qwen/Qwen2.5-1.5B-Instruct --condition answer_only --layer -1
+
+# 3. Run structured-justification condition
+python run_activation_pilot_v2.py --model_name Qwen/Qwen2.5-1.5B-Instruct --condition structured_justification --layer -1
+
+# 4. Optional: run a middle layer
+python run_activation_pilot_v2.py --model_name Qwen/Qwen2.5-1.5B-Instruct --condition answer_only --layer 12
+
+# 5. Optional: use a smaller or different model
+python run_activation_pilot_v2.py --model_name TinyLlama/TinyLlama-1.1B-Chat-v1.0 --condition answer_only --layer -1
